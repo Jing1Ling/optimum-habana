@@ -898,6 +898,7 @@ class GaudiGenerationMixin(GenerationMixin):
                 "qwen2",
                 "gptj",
                 "starcoder2",
+                "mpt",
             ], "reuse_cache only supported by llama, mistral, falcon, mixtral, phi, qwen2 and starcoder2 at the moment"
             if not generation_config.bucket_internal:
                 assert (
