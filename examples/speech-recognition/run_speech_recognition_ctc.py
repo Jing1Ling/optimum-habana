@@ -223,7 +223,7 @@ class DataTrainingArguments:
         },
     )
     chars_to_ignore: Optional[list[str]] = list_field(
-        default=None,
+        default=['"', ",", "?", ".", "!", "-", ";", ":", "“", "%", "‘", "”"],
         metadata={"help": "A list of characters to remove from the transcripts."},
     )
     eval_metrics: list[str] = list_field(
@@ -457,7 +457,7 @@ def main():
     if is_main_process(training_args.local_rank):
         transformers.utils.logging.set_verbosity_info()
     logger.info("Training/evaluation parameters %s", training_args)
-
+    logger.info(f"chars_to_ignore = {data_args.chars_to_ignore}")
     # Set seed before initializing model.
     set_seed(training_args.seed)
 
