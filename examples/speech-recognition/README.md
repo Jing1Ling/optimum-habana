@@ -94,6 +94,7 @@ PT_HPU_LAZY_MODE=1 python run_speech_recognition_ctc.py \
 ```
 
 On a single HPU, this script should run in *ca.* 6 hours and yield a CTC loss of **0.059** and a word error rate of **0.0423**.
+On a single G2E HPU, this script should run ~70 minutes and a word error rate of **0.0428**.
 
 > If your data has a sampling rate which is different from the one of the data the model was trained on, this script will raise an error.
 > Resampling with the `datasets` library is not supported on HPUs yet. HPU graphs are supported only on Gaudi2 and from SynapseAI v1.15.

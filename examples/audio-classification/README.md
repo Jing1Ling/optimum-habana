@@ -62,6 +62,7 @@ PT_HPU_LAZY_MODE=1 python run_audio_classification.py \
 ```
 
 On a single HPU, this script should run in ~13 minutes and yield an accuracy of **97.96%**.
+On a single G2E HPU, this script should run in ~2 minutes and yield an accuracy of **97.88%**.
 
 > If your model classification head dimensions do not fit the number of labels in the dataset, you can specify `--ignore_mismatched_sizes` to adapt it.
 
